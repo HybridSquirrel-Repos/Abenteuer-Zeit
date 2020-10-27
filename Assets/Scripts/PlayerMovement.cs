@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
    [SerializeField] private float fallMultiplier = 5F;
    [SerializeField] private float jumpDelay = 0.25f;
    [SerializeField] private Vector2 rayOffset;
-   [SerializeField] private GameObject twowaySelector;
+
    private float _jumpTimer;
    private float _horizontal;
    private int _isCollidingSide;
@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
 
       if (Input.GetAxis("Vertical") < 0)
       {
-         twowaySelector.gameObject.GetComponent<PlatformEffector2D>().rotationalOffset = 180;
          _isGrounded = false;
       }
 
@@ -104,10 +103,7 @@ public class PlayerMovement : MonoBehaviour
    void OnCollisionEnter2D(Collision2D collision)
    {
       
-      if (collision.gameObject.CompareTag("TwoWayPlatform"))
-      {
-         twowaySelector = collision.gameObject;
-      }
+
       
       foreach (ContactPoint2D hitPos in collision.contacts)
       {
@@ -131,16 +127,10 @@ public class PlayerMovement : MonoBehaviour
       {
          _isCollidingSide = 0;
       }
-      
+
       if (collision.gameObject.CompareTag("TwoWayPlatform"))
       {
          _isCollidingSide = 0;
-         
-         if (Input.GetAxis("Vertical") == 0)
-         {
-            twowaySelector.gameObject.GetComponent<PlatformEffector2D>().rotationalOffset = 0;
-            twowaySelector = null;
-         }
       }
       
    }

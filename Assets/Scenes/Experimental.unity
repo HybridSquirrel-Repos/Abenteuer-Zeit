@@ -1045,6 +1045,7 @@ MonoBehaviour:
   fallMultiplier: 5
   jumpDelay: 0.25
   rayOffset: {x: 0, y: 0}
+  twowaySelector: {fileID: 0}
 --- !u!50 &1170568761
 Rigidbody2D:
   serializedVersion: 4
@@ -1536,7 +1537,7 @@ GameObject:
   - component: {fileID: 1978438481}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Platform
+  m_TagString: TwoWayPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
