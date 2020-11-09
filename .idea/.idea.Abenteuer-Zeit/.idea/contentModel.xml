@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Squirrel\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Squirrel\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Abenteuer-Zeit.-1390597292.00" t="ExcludeRecursive" />
-    <e p="D:\Projects\Abenteuer-Zeit" t="IncludeRecursive">
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_Abenteuer-Zeit.-1756127905.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Abenteuer-Zeit.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -13,6 +13,7 @@
           <e p="DimensionSwitch.cs" t="Include" />
           <e p="FadeScript.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
+          <e p="Respawn.cs" t="Include" />
           <e p="SimpleCameraController.cs" t="Include" />
           <e p="TwoWayPlatform.cs" t="Include" />
         </e>
@@ -25,9 +26,9 @@
           </e>
         </e>
       </e>
+      <e p="Temp/bin" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
-      <e p="Packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
     </e>
   </component>
 </project>
