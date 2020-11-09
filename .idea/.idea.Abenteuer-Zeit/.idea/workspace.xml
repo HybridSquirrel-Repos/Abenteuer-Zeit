@@ -20,9 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d46424f-2674-4e80-9bf5-29a3d7c67f3c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Abenteuer-Zeit/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Abenteuer-Zeit/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Abenteuer-Zeit/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Abenteuer-Zeit/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Experimental.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Experimental.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +41,9 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/DimensionSwitch.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TwoWayPlatform.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FadeScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
       </list>
     </option>
   </component>
@@ -92,7 +91,8 @@
       <workItem from="1603353166278" duration="6385000" />
       <workItem from="1603811016932" duration="2353000" />
       <workItem from="1603890761913" duration="5820000" />
-      <workItem from="1603978288883" duration="736000" />
+      <workItem from="1603978288883" duration="1029000" />
+      <workItem from="1604074522414" duration="59000" />
     </task>
     <servers />
   </component>
