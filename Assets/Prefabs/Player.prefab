@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7416207933558613838}
   - component: {fileID: 7416207933558613837}
   - component: {fileID: 7416207933558613836}
+  - component: {fileID: 7848912161160951315}
   - component: {fileID: 7416207933558613834}
   m_Layer: 2
   m_Name: Player
@@ -153,6 +154,19 @@ MonoBehaviour:
   fallMultiplier: 5
   jumpDelay: 0.25
   rayOffset: {x: 0.48, y: 0}
+  isGrounded: 0
+--- !u!114 &7848912161160951315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7416207933558613827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c8fc7e595f469d79ea6fbe8da5808d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7416207933558613834
 MonoBehaviour:
   m_ObjectHideFlags: 0

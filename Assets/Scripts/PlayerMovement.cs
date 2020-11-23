@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
    private float _jumpTimer;
    private float _horizontal;
    private int _isCollidingSide;
-   private bool _isGrounded;
+   public bool isGrounded;
    private bool _isJumping;
    private Vector2 _playerSize;
    private Vector2 _movement;
@@ -43,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
       if (Input.GetAxis("Vertical") < 0)
       {
-         _isGrounded = false;
+         isGrounded = false;
       }
 
       
@@ -70,12 +71,12 @@ public class PlayerMovement : MonoBehaviour
       }
       
       
-      if (_jumpTimer > Time.time && _isGrounded)
+      if (_jumpTimer > Time.time && isGrounded)
       {
          Jump();
       }
       
-      if (_isGrounded)
+      if (isGrounded)
       {
          rb2d.gravityScale = 0;
       }
@@ -95,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
       
       
       Vector2 ray = (Vector2) transform.position + Vector2.down * (_playerSize.y * 0.5f);
-      _isGrounded = Physics2D.Raycast(ray + rayOffset, Vector2.down, 0.02f, mask) || 
+      isGrounded = Physics2D.Raycast(ray + rayOffset, Vector2.down, 0.02f, mask) || 
                     Physics2D.Raycast(ray - rayOffset, Vector2.down, 0.02f, mask); 
       
    }
