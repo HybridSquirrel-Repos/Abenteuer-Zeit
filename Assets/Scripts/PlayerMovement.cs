@@ -103,8 +103,11 @@ public class PlayerMovement : MonoBehaviour
 
    void OnCollisionEnter2D(Collision2D collision)
    {
-      
 
+      if (collision.gameObject.CompareTag("MovingPlatform"))
+      {
+         gameObject.transform.parent = collision.gameObject.transform;
+      }
       
       foreach (ContactPoint2D hitPos in collision.contacts)
       {
@@ -131,6 +134,12 @@ public class PlayerMovement : MonoBehaviour
 
       if (collision.gameObject.CompareTag("TwoWayPlatform"))
       {
+         _isCollidingSide = 0;
+      }
+
+      if (collision.gameObject.CompareTag("MovingPlatform"))
+      {
+         gameObject.transform.parent = null;
          _isCollidingSide = 0;
       }
       

@@ -22,8 +22,33 @@
     <list default="true" id="0d46424f-2674-4e80-9bf5-29a3d7c67f3c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Abenteuer-Zeit/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Abenteuer-Zeit/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Abenteuer-Zeit/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Abenteuer-Zeit/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/09d318ee250c1c5bd3bc31ae7e4ed1d1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/09d318ee250c1c5bd3bc31ae7e4ed1d1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/0e10b5dee4f4d73f7facac1fac79a9c9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/0e10b5dee4f4d73f7facac1fac79a9c9.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cube.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cube.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Win.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Win.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/beautiful-landscape-sunset-8k-lh.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/beautiful-landscape-sunset-8k-lh.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/down.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/left_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/left_right.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/q.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/q.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/up.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/up_down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/up_down.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Experimental.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Experimental.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BridgePuzzle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BridgePuzzle.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +71,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TwoWayPlatform.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FadeScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DoubleJump.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MovingPlatform.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
       </list>
     </option>
   </component>
@@ -99,6 +125,9 @@
       <workItem from="1604074522414" duration="59000" />
       <workItem from="1605515355385" duration="1901000" />
       <workItem from="1605860578928" duration="11000" />
+      <workItem from="1606726743666" duration="919000" />
+      <workItem from="1606727715202" duration="2289000" />
+      <workItem from="1606732630954" duration="998000" />
     </task>
     <servers />
   </component>

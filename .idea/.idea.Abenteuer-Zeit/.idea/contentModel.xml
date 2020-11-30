@@ -3,17 +3,19 @@
   <component name="ContentModelStore">
     <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_Abenteuer-Zeit.-1756127905.00" t="ExcludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Abenteuer-Zeit.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="BridgePuzzle.cs" t="Include" />
           <e p="CameraScript.cs" t="Include" />
           <e p="DimensionSwitch.cs" t="Include" />
           <e p="DoubleJump.cs" t="Include" />
           <e p="FadeScript.cs" t="Include" />
+          <e p="MovingPlatform.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="Respawn.cs" t="Include" />
           <e p="SimpleCameraController.cs" t="Include" />
