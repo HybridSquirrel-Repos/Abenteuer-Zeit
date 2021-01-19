@@ -5,14 +5,7 @@ using UnityEngine;
 public class FadeScript : MonoBehaviour
 {
     public Material material;
-
-
-    void Start () {
-        
-        material = GetComponent<Renderer> ().material;
-
-    }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         StartCoroutine(nameof(FadeOut));

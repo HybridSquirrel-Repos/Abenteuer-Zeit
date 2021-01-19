@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 577768117617416134}
   - component: {fileID: 577768117617416133}
   - component: {fileID: 577768117617416153}
-  - component: {fileID: 577768117617416154}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: TwoWayPlatform
   m_TagString: TwoWayPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,16 +126,3 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &577768117617416154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577768117617416132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c76b00e3c8d9473418a6ec57d1ee4123, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSwitched: 0

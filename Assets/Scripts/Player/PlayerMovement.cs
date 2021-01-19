@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -17,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
    private float _jumpTimer;
    private float _horizontal;
    private int _isCollidingSide;
-   public bool isGrounded;
+   private bool _isGrounded;
    private bool _isJumping;
    private Vector2 _playerSize;
    private Vector2 _movement;
@@ -30,23 +31,39 @@ public class PlayerMovement : MonoBehaviour
       
    }
 
-
-
-   void Update()
+   public void UpdateMovementData(Vector2 value)
    {
+      _horizontal = value.x;
+   }
 
-      _horizontal = Input.GetAxis("Horizontal");
-      
-      if (Input.GetButtonDown("Jump"))
+   public void UpdateJump()
+   { 
+      _isJumping = true;
+      if (_isJumping)
       {
          _jumpTimer = Time.time + jumpDelay;
       }
+   }
 
-      if (Input.GetAxis("Vertical") < 0)
+   public void TwoWayUpdate()
+   {
+      StartCoroutine(Delay());
+   }
+
+   IEnumerator Delay()
+   {
+      for (int i = 0; i < 10; i++)
       {
-         isGrounded = false;
+         yield return _isGrounded = false;
       }
+   }
+   void Update()
+   {
+      
+      
+     
 
+    
       
       
    }
@@ -71,14 +88,15 @@ public class PlayerMovement : MonoBehaviour
       }
       
       
-      if (_jumpTimer > Time.time && isGrounded)
+      if (_jumpTimer > Time.time && _isGrounded)
       {
          Jump();
       }
       
-      if (isGrounded)
+      if (_isGrounded)
       {
          rb2d.gravityScale = 0;
+         _isJumping = false;
       }
       else
       {
@@ -87,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
          {
             rb2d.gravityScale = gravity * fallMultiplier;
          }
-         else if (rb2d.velocity.y > 0 && !Input.GetButton("Jump"))
+         else if (rb2d.velocity.y > 0 && _isJumping) // need a value
          {
             rb2d.gravityScale = gravity * (fallMultiplier / 2);
          }
@@ -96,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
       
       
       Vector2 ray = (Vector2) transform.position + Vector2.down * (_playerSize.y * 0.5f);
-      isGrounded = Physics2D.Raycast(ray + rayOffset, Vector2.down, 0.02f, mask) || 
+      _isGrounded = Physics2D.Raycast(ray + rayOffset, Vector2.down, 0.02f, mask) || 
                     Physics2D.Raycast(ray - rayOffset, Vector2.down, 0.02f, mask); 
       
    }
@@ -147,10 +165,12 @@ public class PlayerMovement : MonoBehaviour
 
    void Jump()
    {
+ 
       rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
       rb2d.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
       _jumpTimer = 0;
-
+      
+      _isGrounded = false;
    }
 
 }

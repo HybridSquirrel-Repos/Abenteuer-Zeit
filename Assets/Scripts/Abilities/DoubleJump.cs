@@ -11,7 +11,7 @@ public class DoubleJump : MonoBehaviour
 
 
     }
-
+/*
     private void Update()
     {
         if (Input.GetButtonDown("Jump"))
@@ -29,4 +29,6 @@ public class DoubleJump : MonoBehaviour
             once = false;
         }
     }
+    
+    */
 }
