@@ -241,6 +241,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20fb9a3b0e7eae4e9e630fc6e8b1a3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementScript: {fileID: 0}
+  dimensionSwitch: {fileID: 0}
+  twoWayPlatform: {fileID: 0}
   playerMovementBehaviour: {fileID: 280609174572680928}
   playerAnimationBehaviour: {fileID: 7582353321118191811}
   playerVisualsBehaviour: {fileID: 16277596}
@@ -389,6 +392,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 96c8be88-a7bb-4861-b5e9-956b4208d043
     m_ActionName: Menu Controls/Left Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 98e6ba30-bec1-4e9d-9fad-a641f99b0c11
+    m_ActionName: Player Controls/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b1d51973-6f24-426a-ae22-7775d66b47f6
+    m_ActionName: Player Controls/DimentionSwitching[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: abeffbe0-53fb-455d-8ae5-55622fb48e2f
+    m_ActionName: Player Controls/JumpDown[/Keyboard/s]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player Controls
@@ -452,9 +467,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b2534bfb74738418425a76f03357fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRigidbody: {fileID: 1743518200311987066}
   movementSpeed: 5
-  turnSpeed: 0.1
+  jumpVelocity: 5
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  rb2d: {fileID: 0}
+  player: {fileID: 0}
+  gravity: 1
+  fallMultiplier: 5
+  jumpDelay: 0.25
+  rayOffset: {x: 0, y: 0}
 --- !u!1 &1743518200780429236
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +536,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2693099407422876726}
-  m_LocalRotation: {x: -0, y: -0.959314, z: 0.28234145, w: 0}
+  m_LocalRotation: {x: 0.28234145, y: -0, z: -0, w: 0.959314}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.0035760803, y: 0.0035760803, z: 0.0035760803}
   m_Children:

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimationBehaviour : MonoBehaviour
 {
     [Header("Component References")]
-    public Animator playerAnimator;
+    //public Animator playerAnimator;
 
     //Animation String IDs
     private int playerMovementAnimationID;
@@ -24,12 +24,12 @@ public class PlayerAnimationBehaviour : MonoBehaviour
 
     public void UpdateMovementAnimation(float movementBlendValue)
     {
-        playerAnimator.SetFloat(playerMovementAnimationID, movementBlendValue);
+        //playerAnimator.SetFloat(playerMovementAnimationID, movementBlendValue);
     }
 
     public void PlayAttackAnimation()
     {
-        playerAnimator.SetTrigger(playerAttackAnimationID);
+        //playerAnimator.SetTrigger(playerAttackAnimationID);
     }
 
 

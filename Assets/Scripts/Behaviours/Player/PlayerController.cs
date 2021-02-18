@@ -7,6 +7,12 @@ using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour
 {
 
+    [Header("Scripts")]
+    public PlayerMovementBehaviour movementScript;
+    public DimensionSwitch dimensionSwitch;
+    public TwoWayPlatform twoWayPlatform;
+
+    
     //Player ID
     private int playerID;
 
@@ -73,9 +79,30 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnJump(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            UpdateJump();
 
+        }
+    }
 
+    public void OnDimentionSwitching(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            UpdateDimenstionSwitching();
+        }
+    } 
 
+    public void OnJumpDown(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            UpdateOnJumpDown();
+        }
+    }
 
     //INPUT SYSTEM AUTOMATIC CALLBACKS --------------
 
@@ -140,9 +167,31 @@ public class PlayerController : MonoBehaviour
 
     void UpdatePlayerMovement()
     {
-        playerMovementBehaviour.UpdateMovementData(smoothInputMovement);
+        playerMovementBehaviour.UpdateMovementData(rawInputMovement);
     }
 
+    void UpdateJump()
+    {
+        movementScript.UpdateJump();
+    }
+
+    void UpdateDimenstionSwitching()
+    {
+        dimensionSwitch.UpdateDimentionSwitching();
+    }
+
+    void UpdateOnJumpDown()
+    {
+        movementScript.TwoWayUpdate();
+        twoWayPlatform.buttonPressed = true;
+
+    }
+    
+    
+    
+    
+    
+    
     void UpdatePlayerAnimationMovement()
     {
         playerAnimationBehaviour.UpdateMovementAnimation(smoothInputMovement.magnitude);
