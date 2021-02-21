@@ -33,9 +33,9 @@ public class CameraManager : Singleton<CameraManager>
         switch (currentCameraMode)
         {
             case SinglePlayerCameraMode.Stationary:
-                SetCameraObjectNewState(VCamStationaryObject, true);
                 SetCameraObjectNewState(VCamSinglePlayer2DFollow, false);
                 SetCameraObjectNewState(VCamSinglePlayerOrbitObject, false);
+                SetCameraObjectNewState(VCamStationaryObject, true);
                 break;
 
             case SinglePlayerCameraMode.FollowAndOrbit:
@@ -45,9 +45,9 @@ public class CameraManager : Singleton<CameraManager>
                 break;
             
             case SinglePlayerCameraMode.TwoDFollow:
+                SetCameraObjectNewState(VCamSinglePlayer2DFollow,true);
                 SetCameraObjectNewState(VCamStationaryObject, false);
                 SetCameraObjectNewState(VCamSinglePlayerOrbitObject, false);
-                SetCameraObjectNewState(VCamSinglePlayer2DFollow, true);
                 break;
         }
     }
