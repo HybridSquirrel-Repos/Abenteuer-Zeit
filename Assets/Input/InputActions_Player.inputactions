@@ -22,10 +22,10 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Jump",
+                    "name": "Attack",
                     "type": "Button",
                     "id": "10fecf58-9483-40e0-ae20-15c8d01a4288",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "Press"
                 },
@@ -38,9 +38,17 @@
                     "interactions": "Press"
                 },
                 {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "98e6ba30-bec1-4e9d-9fad-a641f99b0c11",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
                     "name": "DimentionSwitching",
                     "type": "Button",
-                    "id": "d0553362-841f-49bc-8921-32b45a0d7543",
+                    "id": "b1d51973-6f24-426a-ae22-7775d66b47f6",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -48,7 +56,7 @@
                 {
                     "name": "JumpDown",
                     "type": "Button",
-                    "id": "c61d7a25-6643-401b-a539-90af7b341b69",
+                    "id": "abeffbe0-53fb-455d-8ae5-55622fb48e2f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -128,18 +136,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Jump",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "b12426a0-38ab-4d90-95e0-6840fcd30db6",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard And Mouse",
-                    "action": "Jump",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -167,44 +175,66 @@
                 },
                 {
                     "name": "",
-                    "id": "a9de4314-d115-460c-8be6-7390849867ae",
+                    "id": "0e12cdbc-fd21-492f-bf50-3d705a582ae0",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f3f9517-da11-4f92-905c-dfaecfd5c971",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "796b3ccc-fc41-4211-9611-96cdb95edf15",
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard And Mouse",
+                    "groups": "",
                     "action": "DimentionSwitching",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "ecd23b5d-2ace-4c63-82d9-7d053febb09d",
+                    "id": "db438c24-a0f7-4ea5-8136-d44bf139b36a",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "DimentionSwitching",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "0f77f0dc-774c-4c5a-868a-f536b2b85161",
-                    "path": "<Keyboard>/s",
+                    "id": "579bd691-be7c-4f2d-8937-324747d5821b",
+                    "path": "<Gamepad>/dpad/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard And Mouse",
+                    "groups": "",
                     "action": "JumpDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "ac013a17-da08-4f40-bfad-757a0ab1e1da",
-                    "path": "<Gamepad>/dpad/down",
+                    "id": "cc113cfc-b705-4dd3-9a5b-a20b83980a5a",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "JumpDown",
                     "isComposite": false,
                     "isPartOfComposite": false
