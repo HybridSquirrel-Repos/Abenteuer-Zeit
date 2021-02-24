@@ -5,11 +5,13 @@ using UnityEngine;
 public class PlayerAnimationBehaviour : MonoBehaviour
 {
     [Header("Component References")]
-    //public Animator playerAnimator;
+    public Animator playerAnimator;
 
     //Animation String IDs
     private int playerMovementAnimationID;
     private int playerAttackAnimationID;
+    private int playerJumpAnimationID;
+    private int playerDimenstionSwitchingAnimationID;
 
     public void SetupBehaviour()
     {
@@ -20,11 +22,13 @@ public class PlayerAnimationBehaviour : MonoBehaviour
     {
         playerMovementAnimationID = Animator.StringToHash("Movement");
         playerAttackAnimationID = Animator.StringToHash("Attack");
+        playerJumpAnimationID = Animator.StringToHash("Jump");
+        playerDimenstionSwitchingAnimationID = Animator.StringToHash("DimensionSwitching");
     }
 
     public void UpdateMovementAnimation(float movementBlendValue)
     {
-        //playerAnimator.SetFloat(playerMovementAnimationID, movementBlendValue);
+        playerAnimator.SetFloat(playerMovementAnimationID, movementBlendValue);
     }
 
     public void PlayAttackAnimation()
@@ -32,5 +36,15 @@ public class PlayerAnimationBehaviour : MonoBehaviour
         //playerAnimator.SetTrigger(playerAttackAnimationID);
     }
 
+    public void PlayJumpAnimation()
+    {
+        playerAnimator.SetTrigger(playerJumpAnimationID);
+    }
 
+    public void PlayDimenstionSwitchingAnimation()
+    {
+        playerAnimator.SetTrigger(playerDimenstionSwitchingAnimationID);
+    }
+    
+    
 }

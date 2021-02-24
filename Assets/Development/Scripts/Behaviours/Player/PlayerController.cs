@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
     {
         if(value.started)
         {
-            playerAnimationBehaviour.PlayAttackAnimation();
+            UpdateAttack();
         }
     }
 
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
     {
         CalculateMovementInputSmoothing();
         UpdatePlayerMovement();
-        UpdatePlayerAnimationMovement();
+        UpdatePlayerAnimationMovement(); 
     }
 
     //Input's Axes values are raw
@@ -170,14 +170,22 @@ public class PlayerController : MonoBehaviour
         playerMovementBehaviour.UpdateMovementData(rawInputMovement);
     }
 
+    void UpdateAttack()
+    {
+        //script for damage or something similar 
+        playerAnimationBehaviour.PlayAttackAnimation();
+    }
+    
     void UpdateJump()
     {
         movementScript.UpdateJump();
+        playerAnimationBehaviour.PlayJumpAnimation();
     }
 
     void UpdateDimenstionSwitching()
     {
         dimensionSwitch.UpdateDimentionSwitching();
+        playerAnimationBehaviour.PlayDimenstionSwitchingAnimation();
     }
 
     void UpdateOnJumpDown()
@@ -194,7 +202,7 @@ public class PlayerController : MonoBehaviour
     
     void UpdatePlayerAnimationMovement()
     {
-        playerAnimationBehaviour.UpdateMovementAnimation(smoothInputMovement.magnitude);
+        playerAnimationBehaviour.UpdateMovementAnimation(rawInputMovement.magnitude);
     }
 
 
