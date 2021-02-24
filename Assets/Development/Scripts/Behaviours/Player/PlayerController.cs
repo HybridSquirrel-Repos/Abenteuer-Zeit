@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public DimensionSwitch dimensionSwitch;
     public TwoWayPlatform twoWayPlatform;
 
-    
+
     //Player ID
     private int playerID;
 
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public float movementSmoothingSpeed = 1f;
     private Vector3 rawInputMovement;
     private Vector3 smoothInputMovement;
-    
+
     //Action Maps
     private string actionMapPlayerControls = "Player Controls";
     private string actionMapMenuControls = "Menu Controls";
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
     //This is called from PlayerInput, when a button has been pushed, that corresponds with the 'Attack' action
     public void OnAttack(InputAction.CallbackContext value)
     {
-        if(value.started)
+        if (value.started)
         {
             UpdateAttack();
         }
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
     //This is called from Player Input, when a button has been pushed, that correspons with the 'TogglePause' action
     public void OnTogglePause(InputAction.CallbackContext value)
     {
-        if(value.started)
+        if (value.started)
         {
             GameManager.Instance.TogglePauseState(this);
         }
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
         {
             UpdateDimenstionSwitching();
         }
-    } 
+    }
 
     public void OnJumpDown(InputAction.CallbackContext value)
     {
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
     public void OnControlsChanged()
     {
 
-        if(playerInput.currentControlScheme != currentControlScheme)
+        if (playerInput.currentControlScheme != currentControlScheme)
         {
             currentControlScheme = playerInput.currentControlScheme;
 
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
     {
         CalculateMovementInputSmoothing();
         UpdatePlayerMovement();
-        UpdatePlayerAnimationMovement(); 
+        UpdatePlayerAnimationMovement();
     }
 
     //Input's Axes values are raw
@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
 
     void CalculateMovementInputSmoothing()
     {
-        
+
         smoothInputMovement = Vector3.Lerp(smoothInputMovement, rawInputMovement, Time.deltaTime * movementSmoothingSpeed);
 
     }
@@ -175,7 +175,7 @@ public class PlayerController : MonoBehaviour
         //script for damage or something similar 
         playerAnimationBehaviour.PlayAttackAnimation();
     }
-    
+
     void UpdateJump()
     {
         movementScript.UpdateJump();
@@ -194,15 +194,15 @@ public class PlayerController : MonoBehaviour
         twoWayPlatform.buttonPressed = true;
 
     }
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     void UpdatePlayerAnimationMovement()
     {
-        playerAnimationBehaviour.UpdateMovementAnimation(rawInputMovement.magnitude);
+        playerAnimationBehaviour.UpdateMovementAnimation(rawInputMovement.x);
     }
 
 
@@ -230,10 +230,10 @@ public class PlayerController : MonoBehaviour
     //Switching Action Maps ----
 
 
-    
+
     public void EnableGameplayControls()
     {
-        playerInput.SwitchCurrentActionMap(actionMapPlayerControls);  
+        playerInput.SwitchCurrentActionMap(actionMapPlayerControls);
     }
 
     public void EnablePauseMenuControls()

@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerAnimationBehaviour : MonoBehaviour
@@ -29,6 +31,14 @@ public class PlayerAnimationBehaviour : MonoBehaviour
     public void UpdateMovementAnimation(float movementBlendValue)
     {
         playerAnimator.SetFloat(playerMovementAnimationID, movementBlendValue);
+        if (movementBlendValue <= -0.1)
+        {
+            gameObject.transform.localScale = new Vector3(-0.4f, 0.4f, 1f);
+        }
+        else if (movementBlendValue >= 0.1)
+        {
+            gameObject.transform.localScale = new Vector3(0.4f, 0.4f, 1f);
+        }
     }
 
     public void PlayAttackAnimation()
@@ -45,6 +55,6 @@ public class PlayerAnimationBehaviour : MonoBehaviour
     {
         playerAnimator.SetTrigger(playerDimenstionSwitchingAnimationID);
     }
-    
-    
+
+
 }

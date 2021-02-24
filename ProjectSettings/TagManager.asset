@@ -44,3 +44,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 23145643
+    locked: 0
+  - name: Objects
+    uniqueID: 3567916587
+    locked: 0
+  - name: Player
+    uniqueID: 2065434693
+    locked: 0
+  - name: Terrain
+    uniqueID: 2723055005
+    locked: 0
+  - name: FG
+    uniqueID: 1720854751
+    locked: 0
