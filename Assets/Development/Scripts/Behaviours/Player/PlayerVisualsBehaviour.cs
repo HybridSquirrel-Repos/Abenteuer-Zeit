@@ -17,7 +17,7 @@ public class PlayerVisualsBehaviour : MonoBehaviour
     public PlayerUIDisplayBehaviour playerUIDisplayBehaviour;
 
     [Header("Player Material")]
-    public SkinnedMeshRenderer playerSkinnedMeshRenderer;
+    public SpriteRenderer playerSpriteRenderer;
 
     private int clothingTintShaderID;
 
@@ -56,7 +56,7 @@ public class PlayerVisualsBehaviour : MonoBehaviour
     void UpdateCharacterShader()
     {
         Color deviceColor = deviceDisplaySettings.GetDeviceColor(playerInput);
-        playerSkinnedMeshRenderer.material.SetColor(clothingTintShaderID, deviceColor);
+        playerSpriteRenderer.material.SetColor(clothingTintShaderID, deviceColor);
     }
 
     public void SetDisconnectedDeviceVisuals()
@@ -66,7 +66,7 @@ public class PlayerVisualsBehaviour : MonoBehaviour
 
         Color disconnectedColor = deviceDisplaySettings.GetDisconnectedColor();
         playerUIDisplayBehaviour.UpdatePlayerIconDisplayColor(disconnectedColor);
-        playerSkinnedMeshRenderer.material.SetColor(clothingTintShaderID, disconnectedColor);
+        playerSpriteRenderer.material.SetColor(clothingTintShaderID, disconnectedColor);
         
     }
 }

@@ -23,6 +23,8 @@ public class PlayerMovementBehaviour : MonoBehaviour
    private Vector2 _playerSize;
    private Vector2 _movement;
    private Camera mainCamera;
+   
+   
    public void SetupBehaviour()
    {
       SetGameplayCamera();
