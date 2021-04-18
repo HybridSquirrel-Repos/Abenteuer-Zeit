@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -178,8 +179,8 @@ public class PlayerController : MonoBehaviour
 
     void UpdateJump()
     {
-        movementScript.UpdateJump();
         playerAnimationBehaviour.PlayJumpAnimation();
+        movementScript.UpdateJump();
     }
 
     void UpdateDimenstionSwitching()
@@ -258,5 +259,5 @@ public class PlayerController : MonoBehaviour
         return playerInput;
     }
 
-
+    
 }

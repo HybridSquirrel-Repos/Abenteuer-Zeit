@@ -86,8 +86,8 @@ public class GameManager : Singleton<GameManager>
 
         for(int i = 0; i < numberOfPlayers; i++)
         {
-            Vector3 spawnPosition = CalculatePositionInRing(i, numberOfPlayers);
-            Quaternion spawnRotation = CalculateRotation();
+            Vector3 spawnPosition = CalculatePositionInLine(i, numberOfPlayers);
+            Quaternion spawnRotation = CalculateRotationZero();
 
             GameObject spawnedPlayer = Instantiate(playerPrefab, spawnPosition, spawnRotation) as GameObject;
             AddPlayerToActivePlayerList(spawnedPlayer.GetComponent<PlayerController>());
@@ -205,7 +205,7 @@ public class GameManager : Singleton<GameManager>
 
     //Spawn Utilities
 
-    Vector3 CalculatePositionInRing(int positionID, int numberOfPlayers)
+    Vector3 CalculatePositionInLine(int positionID, int numberOfPlayers)
     {
         if(numberOfPlayers == 1)
             return spawnRingCenter.position;
@@ -216,9 +216,9 @@ public class GameManager : Singleton<GameManager>
         return spawnRingCenter.position +  new Vector3(x, 0, z);
     }
 
-    Quaternion CalculateRotation()
+    Quaternion CalculateRotationZero()
     {
-        return Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0));
+        return Quaternion.Euler(new Vector3(0, 0, 0));
     }
 
 }
