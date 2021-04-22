@@ -22,7 +22,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
    private bool _isJumping;
    private Vector2 _playerSize;
    private Vector2 _movement;
-   private Camera mainCamera;
+   private Camera _mainCamera;
    
    
    public void SetupBehaviour()
@@ -32,7 +32,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
    void SetGameplayCamera()
    {
-      mainCamera = CameraManager.Instance.GetGameplayCamera();
+      _mainCamera = CameraManager.Instance.GetGameplayCamera();
    }
    
    
@@ -49,10 +49,10 @@ public class PlayerMovementBehaviour : MonoBehaviour
       _horizontal = value.x;
    }
 
-   public void UpdateJump()
+   public void UpdateJump(bool value)
    {
 
-      _isJumping = true;
+      _isJumping = value;
       if (_isJumping)
       {
          _jumpTimer = Time.time + jumpDelay;
@@ -108,7 +108,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
       if (_isGrounded)
       {
          rb2d.gravityScale = 0;
-         _isJumping = false;
+         //_isJumping = false;
       }
       else
       {
@@ -117,7 +117,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
          {
             rb2d.gravityScale = gravity * fallMultiplier;
          }
-         else if (rb2d.velocity.y > 0 && _isJumping) // need a value
+         else if (rb2d.velocity.y > 0 && !_isJumping) // jump high change; remove ! for higher jump
          {
             rb2d.gravityScale = gravity * (fallMultiplier / 2);
          }
@@ -183,7 +183,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
       rb2d.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
       _jumpTimer = 0;
       
-      _isGrounded = false;
+      //_isGrounded = false;
    }
 
 }

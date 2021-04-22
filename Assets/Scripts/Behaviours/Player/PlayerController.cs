@@ -82,10 +82,14 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext value)
     {
-        if (value.started)
+        if (value.performed)
         {
-            UpdateJump();
+            UpdateJump(true);
+        }
 
+        if (value.canceled)
+        {
+            UpdateJump(false);
         }
     }
 
@@ -177,10 +181,10 @@ public class PlayerController : MonoBehaviour
         playerAnimationBehaviour.PlayAttackAnimation();
     }
 
-    void UpdateJump()
+    void UpdateJump(bool value)
     {
-        playerAnimationBehaviour.PlayJumpAnimation();
-        movementScript.UpdateJump();
+        if (value) playerAnimationBehaviour.PlayJumpAnimation();
+        movementScript.UpdateJump(value);
     }
 
     void UpdateDimenstionSwitching()
