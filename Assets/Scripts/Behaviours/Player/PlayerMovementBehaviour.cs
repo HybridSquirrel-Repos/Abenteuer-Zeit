@@ -157,6 +157,11 @@ public class PlayerMovementBehaviour : MonoBehaviour
    
    void OnCollisionExit2D(Collision2D collision)
    {
+      if (collision.gameObject.CompareTag("Player"))
+      {
+         _isCollidingSide = 0;
+      }
+      
       if (collision.gameObject.CompareTag("Platform"))
       {
          _isCollidingSide = 0;

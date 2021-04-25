@@ -37,7 +37,7 @@ public class MovingPlatform : MonoBehaviour
             _moveTo = positions[0];
         }
         
-        transform.localPosition = Vector3.MoveTowards(_currentPos, _moveTo, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(_currentPos, _moveTo, speed * Time.deltaTime);
     }
 }
 

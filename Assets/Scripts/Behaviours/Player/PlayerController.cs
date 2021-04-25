@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [Header("Scripts")]
     public PlayerMovementBehaviour movementScript;
     public DimensionSwitch dimensionSwitch;
-    public TwoWayPlatform twoWayPlatform;
+    private TwoWayPlatform twoWayPlatform;
 
 
     //Player ID
@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     //Current Control Scheme
     private string currentControlScheme;
 
+    //Setup TwowaysPlatform
+    private void Awake()
+    { twoWayPlatform = GameObject.Find("PlatformManager").GetComponent<TwoWayPlatform>(); }
 
     //This is called from the GameManager; when the game is being setup.
     public void SetupPlayer(int newPlayerID)
