@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WizardShader
+  m_Name: Shader
   m_Shader: {fileID: -6465566751694194690, guid: e91e5a4894a9c2d44bcbe88e230db1b5,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
@@ -20,8 +20,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_435893037966417aa881e4a3556411cb_Texture_1:
-        m_Texture: {fileID: 2800000, guid: f0753fe7b92bb164a8c2217f3b3c6f25, type: 3}
+    - Texture2D_1725af33eac34ebf83ba82390083a967:
+        m_Texture: {fileID: 2800000, guid: f5b40f97d9dfda54783d640a2a76ef23, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:

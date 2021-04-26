@@ -111,6 +111,14 @@ public class PlayerController : MonoBehaviour
             UpdateOnJumpDown();
         }
     }
+    
+    public void OnDash(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            UpdateOnDash();
+        }
+    }
 
     //INPUT SYSTEM AUTOMATIC CALLBACKS --------------
 
@@ -192,8 +200,10 @@ public class PlayerController : MonoBehaviour
 
     void UpdateDimenstionSwitching()
     {
-        dimensionSwitch.UpdateDimentionSwitching();
+        transform.SetParent(null, true); //Fix the disappearance of player when standing on moving platform
         playerAnimationBehaviour.PlayDimenstionSwitchingAnimation();
+        dimensionSwitch.UpdateDimentionSwitching();
+        
     }
 
     void UpdateOnJumpDown()
@@ -201,6 +211,12 @@ public class PlayerController : MonoBehaviour
         movementScript.TwoWayUpdate();
         twoWayPlatform.buttonPressed = true;
 
+    }
+
+    void UpdateOnDash()
+    {
+        playerAnimationBehaviour.PlayDashAnimation();
+        movementScript.Dash();
     }
 
 

@@ -6,6 +6,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
 {
    [SerializeField] private float movementSpeed = 5;
    [SerializeField] private float jumpVelocity = 5;
+   [SerializeField] private float DashSpeed = 20;
    [SerializeField] private LayerMask mask;
    [SerializeField] private Rigidbody2D rb2d;
    [SerializeField] private GameObject player;
@@ -21,9 +22,9 @@ public class PlayerMovementBehaviour : MonoBehaviour
    private bool _isGrounded;
    private bool _isJumping;
    private Vector2 _playerSize;
-   private Vector2 _movement;
    private Camera _mainCamera;
-   
+
+   private bool _isDashing;
    
    public void SetupBehaviour()
    {
@@ -77,27 +78,51 @@ public class PlayerMovementBehaviour : MonoBehaviour
    {
 
       
-      
    }
 
    void FixedUpdate()
    {
-      if (_isCollidingSide.Equals(1) && _horizontal > 0)
+      if (!_isDashing)
       {
-         rb2d.velocity = new Vector2(_horizontal * movementSpeed, rb2d.velocity.y);
+         if (_isCollidingSide.Equals(1) && _horizontal > 0)
+         {
+            rb2d.velocity = new Vector2(_horizontal * movementSpeed, rb2d.velocity.y);
 
          
-      }
-      else if (_isCollidingSide.Equals(-1) && _horizontal < 0)
-      {
-         rb2d.velocity = new Vector2(_horizontal * movementSpeed, rb2d.velocity.y);
+         }
+         else if (_isCollidingSide.Equals(-1) && _horizontal < 0)
+         {
+            rb2d.velocity = new Vector2(_horizontal * movementSpeed, rb2d.velocity.y);
 
-      }
-      else if(_isCollidingSide.Equals(0))
-      {
-         rb2d.velocity = new Vector2(_horizontal * movementSpeed, rb2d.velocity.y);
+         }
+         else if(_isCollidingSide.Equals(0))
+         {
+            rb2d.velocity = new Vector2(_horizontal * movementSpeed, rb2d.velocity.y);
          
+         }
       }
+      else
+      {
+         
+         if (_isCollidingSide.Equals(1) && _horizontal > 0)
+         {
+            rb2d.velocity = new Vector2(_horizontal * movementSpeed * DashSpeed, rb2d.velocity.y);
+
+         
+         }
+         else if (_isCollidingSide.Equals(-1) && _horizontal < 0)
+         {
+            rb2d.velocity = new Vector2(_horizontal * movementSpeed * DashSpeed, rb2d.velocity.y);
+
+         }
+         else if(_isCollidingSide.Equals(0))
+         {
+            rb2d.velocity = new Vector2(_horizontal * movementSpeed * DashSpeed, rb2d.velocity.y);
+         
+         }
+      }
+     
+    
       
       
       if (_jumpTimer > Time.time && _isGrounded)
@@ -117,7 +142,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
          {
             rb2d.gravityScale = gravity * fallMultiplier;
          }
-         else if (rb2d.velocity.y > 0 && !_isJumping) // jump high change; remove ! for higher jump
+         else if (rb2d.velocity.y > 0 && !_isJumping) 
          {
             rb2d.gravityScale = gravity * (fallMultiplier / 2);
          }
@@ -190,5 +215,18 @@ public class PlayerMovementBehaviour : MonoBehaviour
       
       //_isGrounded = false;
    }
+
+   public void Dash()
+   {
+      _isDashing = true;
+      StartCoroutine(DisableDash());
+   }
+
+   IEnumerator DisableDash()
+   {
+      yield return new WaitForSeconds(0.2f);
+      _isDashing = false;
+   }
+   
 
 }

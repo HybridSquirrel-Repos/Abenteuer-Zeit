@@ -14,6 +14,7 @@ public class PlayerAnimationBehaviour : MonoBehaviour
     private int playerAttackAnimationID;
     private int playerJumpAnimationID;
     private int playerDimenstionSwitchingAnimationID;
+    private int playerDashID;
 
     public void SetupBehaviour()
     {
@@ -25,7 +26,8 @@ public class PlayerAnimationBehaviour : MonoBehaviour
         playerMovementAnimationID = Animator.StringToHash("Movement");
         playerAttackAnimationID = Animator.StringToHash("Attack");
         playerJumpAnimationID = Animator.StringToHash("Jump");
-        playerDimenstionSwitchingAnimationID = Animator.StringToHash("DimensionSwitching");
+        playerDimenstionSwitchingAnimationID = Animator.StringToHash("DimentionSwitching");
+        playerDashID = Animator.StringToHash("Dash");
     }
 
     public void UpdateMovementAnimation(float movementBlendValue)
@@ -56,5 +58,9 @@ public class PlayerAnimationBehaviour : MonoBehaviour
         playerAnimator.SetTrigger(playerDimenstionSwitchingAnimationID);
     }
 
+    public void PlayDashAnimation()
+    {
+        playerAnimator.SetTrigger(playerDashID);
+    }
 
 }
