@@ -41,6 +41,7 @@ public class PlayerAnimationBehaviour : MonoBehaviour
         {
             gameObject.transform.localScale = new Vector3(0.4f, 0.4f, 1f);
         }
+        
     }
 
     public void PlayAttackAnimation()
@@ -51,6 +52,7 @@ public class PlayerAnimationBehaviour : MonoBehaviour
     public void PlayJumpAnimation()
     {
         playerAnimator.SetTrigger(playerJumpAnimationID);
+
     }
 
     public void PlayDimenstionSwitchingAnimation()

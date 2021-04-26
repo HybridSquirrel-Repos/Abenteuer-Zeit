@@ -19,7 +19,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
    private float _jumpTimer;
    private float _horizontal;
    private int _isCollidingSide;
-   private bool _isGrounded;
+   public bool _isGrounded { get; private set; }
    private bool _isJumping;
    private Vector2 _playerSize;
    private Camera _mainCamera;

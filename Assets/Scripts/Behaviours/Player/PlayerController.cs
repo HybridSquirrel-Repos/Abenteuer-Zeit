@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 rawInputMovement;
     private Vector3 smoothInputMovement;
 
+    private bool isPlayingMovement;
+    private bool isPlayingJump;
+
     //Action Maps
     private string actionMapPlayerControls = "Player Controls";
     private string actionMapMenuControls = "Menu Controls";
@@ -183,6 +186,17 @@ public class PlayerController : MonoBehaviour
 
     void UpdatePlayerMovement()
     {
+        if (rawInputMovement.x > 0 || rawInputMovement.x < 0)
+        {
+            if (movementScript._isGrounded)
+            {
+                if (FindObjectOfType<AudioManager>().HasEnded("PlayerWalk"))
+                { FindObjectOfType<AudioManager>().Play("PlayerWalk"); }
+            }
+            else { FindObjectOfType<AudioManager>().Stop("PlayerWalk"); }
+        }
+        else { FindObjectOfType<AudioManager>().Stop("PlayerWalk"); }
+        
         playerMovementBehaviour.UpdateMovementData(rawInputMovement);
     }
 
@@ -194,7 +208,27 @@ public class PlayerController : MonoBehaviour
 
     void UpdateJump(bool value)
     {
-        if (value) playerAnimationBehaviour.PlayJumpAnimation();
+        if (value)
+        {
+            if (movementScript._isGrounded)
+            {
+                if (FindObjectOfType<AudioManager>().HasEnded("Jump"))
+                {
+                    FindObjectOfType<AudioManager>().Play("Jump");
+                }
+                else
+                {
+                    FindObjectOfType<AudioManager>().Stop("Jump");
+                }
+            }
+            else
+            {
+                FindObjectOfType<AudioManager>().Stop("Jump");
+            }
+        }
+       
+        
+        if(value) { playerAnimationBehaviour.PlayJumpAnimation(); }
         movementScript.UpdateJump(value);
     }
 
