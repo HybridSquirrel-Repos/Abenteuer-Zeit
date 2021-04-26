@@ -9,7 +9,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
    [SerializeField] private float DashSpeed = 20;
    [SerializeField] private LayerMask mask;
    [SerializeField] private Rigidbody2D rb2d;
-   [SerializeField] private GameObject player;
+   [SerializeField] private Animator playerAnimator;
    [SerializeField] private float gravity = 1f;
    [SerializeField] private float fallMultiplier = 5F;
    [SerializeField] private float jumpDelay = 0.25f;
@@ -152,7 +152,10 @@ public class PlayerMovementBehaviour : MonoBehaviour
       
       Vector2 ray = (Vector2) transform.position + Vector2.down * (_playerSize.y * 0.5f);
       _isGrounded = Physics2D.Raycast(ray + rayOffset, Vector2.down, 0.02f, mask) || 
-                    Physics2D.Raycast(ray - rayOffset, Vector2.down, 0.02f, mask); 
+                    Physics2D.Raycast(ray - rayOffset, Vector2.down, 0.02f, mask);
+      
+      if (_isGrounded) { playerAnimator.SetBool("Grounded", true); }
+      else { playerAnimator.SetBool("Grounded", false); }
       
    }
 
