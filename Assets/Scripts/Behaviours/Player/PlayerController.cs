@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Scripts")]
     public PlayerMovementBehaviour movementScript;
-    public DimensionSwitch dimensionSwitch;
+    private DimensionSwitch dimensionSwitch;
     private TwoWayPlatform twoWayPlatform;
 
 
@@ -41,7 +41,10 @@ public class PlayerController : MonoBehaviour
 
     //Setup TwowaysPlatform
     private void Awake()
-    { twoWayPlatform = GameObject.Find("PlatformManager").GetComponent<TwoWayPlatform>(); }
+    {
+        twoWayPlatform = GameObject.Find("PlatformManager").GetComponent<TwoWayPlatform>();
+        dimensionSwitch = GameObject.Find("PlatformManager").GetComponent<DimensionSwitch>();
+    }
 
     //This is called from the GameManager; when the game is being setup.
     public void SetupPlayer(int newPlayerID)
@@ -67,15 +70,7 @@ public class PlayerController : MonoBehaviour
         Vector2 inputMovement = value.ReadValue<Vector2>();
         rawInputMovement = new Vector3(inputMovement.x, 0, inputMovement.y);
     }
-
-    //This is called from PlayerInput, when a button has been pushed, that corresponds with the 'Attack' action
-    public void OnAttack(InputAction.CallbackContext value)
-    {
-        if (value.started)
-        {
-            UpdateAttack();
-        }
-    }
+    
 
     //This is called from Player Input, when a button has been pushed, that correspons with the 'TogglePause' action
     public void OnTogglePause(InputAction.CallbackContext value)
@@ -200,11 +195,7 @@ public class PlayerController : MonoBehaviour
         playerMovementBehaviour.UpdateMovementData(rawInputMovement);
     }
 
-    void UpdateAttack()
-    {
-        //script for damage or something similar 
-        playerAnimationBehaviour.PlayAttackAnimation();
-    }
+
 
     void UpdateJump(bool value)
     {
@@ -231,6 +222,7 @@ public class PlayerController : MonoBehaviour
         if(value) { playerAnimationBehaviour.PlayJumpAnimation(); }
         movementScript.UpdateJump(value);
     }
+
 
     void UpdateDimenstionSwitching()
     {

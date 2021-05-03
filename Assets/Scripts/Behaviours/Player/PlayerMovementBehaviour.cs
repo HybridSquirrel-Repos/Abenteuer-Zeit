@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovementBehaviour : MonoBehaviour
 {
+   private PlayerAnimationBehaviour _animationBehaviour;
+   
    [SerializeField] private float movementSpeed = 5;
    [SerializeField] private float jumpVelocity = 5;
    [SerializeField] private float DashSpeed = 20;
@@ -39,6 +41,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
    
    void Awake()
    {
+      _animationBehaviour = transform.GetChild(0).GetComponent<PlayerAnimationBehaviour>();
       _playerSize = GetComponent<BoxCollider2D>().size;
       rb2d = GetComponent<Rigidbody2D>();
       mask = LayerMask.GetMask("Default");
@@ -154,8 +157,8 @@ public class PlayerMovementBehaviour : MonoBehaviour
       _isGrounded = Physics2D.Raycast(ray + rayOffset, Vector2.down, 0.02f, mask) || 
                     Physics2D.Raycast(ray - rayOffset, Vector2.down, 0.02f, mask);
       
-      if (_isGrounded) { playerAnimator.SetBool("Grounded", true); }
-      else { playerAnimator.SetBool("Grounded", false); }
+      if (_isGrounded) { _animationBehaviour.IsGrounded(true); }
+      else { _animationBehaviour.IsGrounded(false); }
       
    }
 

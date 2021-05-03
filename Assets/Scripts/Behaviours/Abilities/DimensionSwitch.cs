@@ -16,6 +16,11 @@ public class DimensionSwitch : MonoBehaviour
     public void UpdateDimentionSwitching()
     {
         _realmSwitch = !_realmSwitch;
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (var player in players)
+        {
+            player.transform.GetChild(2).gameObject.SetActive(_realmSwitch);
+        }
     }
     void Update()
     {

@@ -11,7 +11,6 @@ public class PlayerAnimationBehaviour : MonoBehaviour
 
     //Animation String IDs
     private int playerMovementAnimationID;
-    private int playerAttackAnimationID;
     private int playerJumpAnimationID;
     private int playerDimenstionSwitchingAnimationID;
     private int playerDashID;
@@ -24,10 +23,11 @@ public class PlayerAnimationBehaviour : MonoBehaviour
     void SetupAnimationIDs()
     {
         playerMovementAnimationID = Animator.StringToHash("Movement");
-        playerAttackAnimationID = Animator.StringToHash("Attack");
         playerJumpAnimationID = Animator.StringToHash("Jump");
         playerDimenstionSwitchingAnimationID = Animator.StringToHash("DimentionSwitching");
         playerDashID = Animator.StringToHash("Dash");
+     
+
     }
 
     public void UpdateMovementAnimation(float movementBlendValue)
@@ -43,11 +43,7 @@ public class PlayerAnimationBehaviour : MonoBehaviour
         }
         
     }
-
-    public void PlayAttackAnimation()
-    {
-        //playerAnimator.SetTrigger(playerAttackAnimationID);
-    }
+    
 
     public void PlayJumpAnimation()
     {
@@ -65,4 +61,8 @@ public class PlayerAnimationBehaviour : MonoBehaviour
         playerAnimator.SetTrigger(playerDashID);
     }
 
+    public void IsGrounded(bool grounded)
+    {
+        playerAnimator.SetBool("Grounded",grounded);
+    }
 }
