@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -28,7 +25,9 @@ public class Player : MonoBehaviour
     [Header("Realm Switch")]
     [SerializeField] private GameObject normalRealm;
     [SerializeField] private GameObject shadowRealm;
+    [SerializeField] private Camera MainCamera;
     private bool realmSwitch;
+
 
     private Rigidbody2D rb;
     private Animator PlayerAnimator;
@@ -129,12 +128,15 @@ public class Player : MonoBehaviour
         {
             normalRealm.SetActive(false);
             shadowRealm.SetActive(true);
+            PlayerAnimator.SetBool("ShadowRealm", true);
+            MainCamera.GetComponent<ToggleAdjustment>().SetAdjustments(true);
         }
         else
         {
             shadowRealm.SetActive(false);
             normalRealm.SetActive(true);
-
+            PlayerAnimator.SetBool("ShadowRealm", false);
+            MainCamera.GetComponent<ToggleAdjustment>().SetAdjustments(false);
         }
     }
 
